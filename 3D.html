@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 200px;
+            height: 300px;
+            position: relative;
+            perspective: 800px;
+        }
+        .front {
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            position: absolute;
+            transition: all 1s;
+/*            transform: translateZ(0px);*/
+/*            z-index: 999;*/
+        }
+        .card .back {
+            width: 100%;
+            height: 100%;
+            background-color: purple;
+            position: absolute;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+            transition: all 1s;
+        }
+        .card:hover .front{
+            transform: rotateY(180deg);
+        }
+        .card:hover .back {
+            transform: rotateY(360deg);
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }      
+        .card2 {
+            margin-top: 20px;
+            width: 200px;
+            height: 300px;  
+            position: relative;
+            overflow: hidden;
+        }
+        .card2 .back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+/*            background-color: purple;*/
+            transform: translateZ(-50px);
+            opacity: 0;
+            transition: all 1s;
+        }
+        .card2:hover .front{
+            transform:  translateZ(-50px);
+            opacity: 0;
+        }
+        .card2:hover .back {
+            transform:  translateZ(0px);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="front">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus est doloribus, repellat ab animi accusantium, dolores laboriosam vero impedit quisquam repellendus eum magni pariatur aut quaerat. Atque aspernatur amet quia alias labore aliquam ut nostrum nemo, est a, quaerat necessitatibus.</div>
+        <div class="back">
+            <img src="images/002.jpg" alt="">
+        </div>
+    </div>
+    <div class="card2">
+        <div class="front">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem esse odio rerum tempore itaque reiciendis sunt doloremque nulla! Officiis cum non architecto, eos dolor labore ad quod tempore voluptas reprehenderit.40</div>
+        <div class="back">
+            <img src="images/004.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>
